@@ -1,0 +1,19 @@
+[project]
+name = "image-meta-mcp"
+version = "0.1.0"
+description = "MCP server for reading image generation metadata (PNG, JPEG)"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "Pillow>=10.0.0",
+]
+
+[project.scripts]
+image-meta = "image_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["image_server.py"]
